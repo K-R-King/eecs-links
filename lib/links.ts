@@ -1,3 +1,5 @@
+import { siteUrl } from "@/lib/suite";
+
 export type Link = {
   title: string;
   url: string;
@@ -35,6 +37,8 @@ export const CATEGORIES: Category[] = [
     title: "Degree requirements",
     blurb: "What the EECS major actually asks of you.",
     links: [
+      { title: "EECS Planner", url: siteUrl("planner"), description: "Map your whole degree semester by semester, with an AI advisor.", note: "Sister site" },
+      { title: "EECS Prereqs", url: siteUrl("prereqs"), description: "What every EECS course needs first, the full chain, and what it unlocks.", note: "Sister site" },
       { title: "EECS major requirements", url: "https://engineering.berkeley.edu/students/undergraduate-guide/degree-requirements/major-programs/electrical-engineering-computer-sciences/", description: "Berkeley Engineering's official checklist for the EECS major." },
       { title: "Lower-division requirements", url: "https://eecs.berkeley.edu/resources/undergrads/eecs-2/degree-reqs-lowerdiv-2/", description: "The EECS department's list of math, physics, and intro courses." },
       { title: "Humanities & social sciences", url: "https://engineering.berkeley.edu/students/undergraduate-guide/degree-requirements/humanities-and-social-sciences/", description: "The H/SS breadth requirement and which courses count." },

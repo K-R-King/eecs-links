@@ -1,4 +1,9 @@
-import { PLANNER_URL } from "@/lib/starred";
+import { siteUrl } from "@/lib/suite";
+
+const SIBLINGS = [
+  { id: "planner", icon: "🗺️", title: "EECS Planner", text: "Map your whole degree, semester by semester.", cta: "Open the planner →" },
+  { id: "prereqs", icon: "🧭", title: "EECS Prereqs", text: "See what every EECS course needs first, and what it unlocks.", cta: "Open the prereqs →" },
+] as const;
 
 const TIPS = [
   { icon: "🔍", title: "Search anything", text: "Press / anywhere to jump to search, Esc to clear it." },
@@ -33,20 +38,23 @@ export default function Footer() {
           ))}
         </div>
 
-        {PLANNER_URL && (
-          <a
-            href={PLANNER_URL}
-            className="group mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-gold/30 bg-gold/10 p-6 transition hover:border-gold sm:flex-row"
-          >
-            <span className="text-center sm:text-left">
-              <span className="block font-semibold">🗺️ Planning your next semesters?</span>
-              <span className="block text-sm text-blue-200">The EECS Planner maps your whole degree, prerequisites and all.</span>
-            </span>
-            <span className="shrink-0 rounded-xl bg-gold px-5 py-2.5 text-sm font-semibold text-berkeley shadow-lg shadow-gold/30 transition group-hover:-translate-y-0.5">
-              Open the planner →
-            </span>
-          </a>
-        )}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          {SIBLINGS.map((s) => (
+            <a
+              key={s.id}
+              href={siteUrl(s.id)}
+              className="group flex flex-col justify-between gap-4 rounded-2xl border border-gold/30 bg-gold/10 p-6 transition hover:border-gold"
+            >
+              <span>
+                <span className="block font-semibold">{s.icon} {s.title}</span>
+                <span className="block text-sm text-blue-200">{s.text}</span>
+              </span>
+              <span className="self-start rounded-xl bg-gold px-5 py-2.5 text-sm font-semibold text-berkeley shadow-lg shadow-gold/30 transition group-hover:-translate-y-0.5">
+                {s.cta}
+              </span>
+            </a>
+          ))}
+        </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm sm:flex-row">
           <div className="flex items-center gap-2 font-semibold">

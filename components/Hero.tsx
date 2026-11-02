@@ -1,5 +1,6 @@
 import { CATEGORIES, LINK_COUNT } from "@/lib/links";
-import { PLANNER_URL } from "@/lib/starred";
+import SuiteNav from "@/components/SuiteNav";
+import { siteUrl } from "@/lib/suite";
 
 const FLOATING_TAGS = [
   { label: "CalCentral", className: "left-[6%] top-[22%] -rotate-6 animate-float" },
@@ -41,20 +42,13 @@ export default function Hero() {
       ))}
 
       {/* nav */}
-      <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 py-6">
+      <nav className="relative mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 py-6">
         <div className="flex items-center gap-2 font-bold tracking-tight">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/icon.svg" alt="" className="h-8 w-8" />
           EECS Links
         </div>
-        {PLANNER_URL && (
-          <a
-            href={PLANNER_URL}
-            className="rounded-full border border-white/20 px-3 py-1 text-xs text-blue-100 transition hover:border-gold hover:text-gold"
-          >
-            🗺️ Course planner →
-          </a>
-        )}
+        <SuiteNav current="links" />
       </nav>
 
       <div className="relative mx-auto mt-8 grid max-w-6xl items-center gap-12 lg:mt-14 lg:grid-cols-[1.15fr_1fr]">
@@ -86,14 +80,12 @@ export default function Hero() {
             >
               Browse the links ↓
             </a>
-            {PLANNER_URL && (
-              <a
-                href={PLANNER_URL}
-                className="rounded-xl border border-white/25 bg-white/5 px-6 py-3 font-semibold backdrop-blur transition hover:-translate-y-0.5 hover:border-gold hover:text-gold"
-              >
-                Plan my degree
-              </a>
-            )}
+            <a
+              href={siteUrl("planner")}
+              className="rounded-xl border border-white/25 bg-white/5 px-6 py-3 font-semibold backdrop-blur transition hover:-translate-y-0.5 hover:border-gold hover:text-gold"
+            >
+              Plan my degree
+            </a>
           </div>
         </div>
 
