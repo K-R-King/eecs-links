@@ -18,8 +18,3 @@ export function saveStarred(urls: string[]) {
     // storage full or blocked (e.g. private browsing); stars just won't persist
   }
 }
-
-// the EECS Planner; locally it runs on port 3000
-export const PLANNER_URL =
-  process.env.NEXT_PUBLIC_PLANNER_URL ??
-  (process.env.NODE_ENV === "development" ? "http://localhost:3000" : undefined);
