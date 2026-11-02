@@ -3,6 +3,7 @@ import { siteUrl } from "@/lib/suite";
 const SIBLINGS = [
   { id: "planner", icon: "🗺️", title: "EECS Planner", text: "Map your whole degree, semester by semester.", cta: "Open the planner →" },
   { id: "prereqs", icon: "🧭", title: "EECS Prereqs", text: "See what every EECS course needs first, and what it unlocks.", cta: "Open the prereqs →" },
+  { id: "electives", icon: "🎯", title: "EECS Electives", text: "Find the upper-division electives that fit you.", cta: "Find electives →" },
 ] as const;
 
 const TIPS = [
@@ -38,7 +39,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-3">
           {SIBLINGS.map((s) => (
             <a
               key={s.id}
