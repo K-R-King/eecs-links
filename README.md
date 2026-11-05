@@ -20,6 +20,10 @@ npm run dev
 
 Open `http://localhost:3001`. It uses port 3001 so it can run next to the planner (port 3000). In development, the switcher points to the planner (`localhost:3000`), prereqs (`3002`), electives (`3003`) and hub (`3004`) sites.
 
+GitHub Actions typechecks, lints and builds the site on every push (`.github/workflows/ci.yml`).
+
+On the 1st of every month, `.github/workflows/check-links.yml` visits every link in `lib/links.ts` and opens an issue listing any that are broken. Run it any time from the Actions tab.
+
 ## Editing the links
 
 All links live in [`lib/links.ts`](lib/links.ts). Add an entry to a category's `links` array (or a new category) and it shows up in search, filters, and counts automatically.
@@ -32,3 +36,7 @@ All links live in [`lib/links.ts`](lib/links.ts). Add an entry to a category's `
 4. Visits are counted with [Vercel Web Analytics](https://vercel.com/docs/analytics) (no cookies); turn it on under the project's **Analytics** tab.
 
 This is an unofficial student resource, not affiliated with UC Berkeley.
+
+## Across the EECS sites
+
+Courses marked as taken travel with the links between the EECS sites (`?taken=CS61A.CS61B`), so students enter them once. `lib/handoff.ts` and `components/SuiteLinks.tsx` do this and are the same in all five sites; change them in all five. Each site also has a link preview image (`app/opengraph-image.tsx`), a sitemap and a robots file.
