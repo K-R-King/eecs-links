@@ -77,7 +77,7 @@ export default function Directory() {
       <div className="rounded-3xl bg-white dark:bg-slate-900 p-5 shadow-xl shadow-berkeley/10 ring-1 ring-slate-200 dark:ring-slate-700 sm:p-6">
         <label htmlFor="search" className="sr-only">Search links</label>
         <div className="relative">
-          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" aria-hidden>🔍</span>
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400" aria-hidden>🔍</span>
           <input
             ref={searchRef}
             id="search"
@@ -88,7 +88,7 @@ export default function Directory() {
             placeholder="Search links: enrollment, tutoring, CS 61B…"
             className="w-full rounded-2xl bg-slate-50 dark:bg-slate-800/60 py-3.5 pl-12 pr-14 text-base ring-1 ring-slate-200 dark:ring-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-gold"
           />
-          <kbd className="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 rounded-md border border-slate-300 dark:border-slate-600 px-2 py-0.5 font-mono text-xs text-slate-500 dark:text-slate-400 sm:block">
+          <kbd className="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 rounded-md border border-slate-300 dark:border-slate-600 px-2 py-0.5 font-mono text-xs text-slate-600 dark:text-slate-400 sm:block">
             /
           </kbd>
         </div>
@@ -110,14 +110,14 @@ export default function Directory() {
               >
                 <span aria-hidden>{c.icon}</span>
                 {c.label}
-                <span className={`text-xs ${active ? "opacity-80" : "text-slate-500 dark:text-slate-400"}`}>{c.count}</span>
+                <span className={`text-xs ${active ? "opacity-80" : "text-slate-600 dark:text-slate-400"}`}>{c.count}</span>
               </button>
             );
           })}
         </div>
       </div>
 
-      <p className="mt-6 px-1 text-sm text-slate-500 dark:text-slate-400" aria-live="polite">
+      <p className="mt-6 px-1 text-sm text-slate-600 dark:text-slate-400" aria-live="polite">
         {query.trim() ? `${shown} link${shown === 1 ? "" : "s"} match “${query.trim()}”` : null}
       </p>
 
@@ -131,7 +131,7 @@ export default function Directory() {
                   <span aria-hidden>{s.icon}</span>
                   {s.title}
                 </h2>
-                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{s.blurb}</p>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{s.blurb}</p>
               </div>
               <span className="shrink-0 rounded-full bg-gold/15 px-3 py-1 text-xs font-semibold text-gold-dark dark:text-gold">
                 {s.links.length}
@@ -157,7 +157,7 @@ export default function Directory() {
               🔭
             </div>
             <p className="mt-5 font-semibold">No links match “{query.trim()}”</p>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Try a shorter word, or search all categories.</p>
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Try a shorter word, or search all categories.</p>
             <button
               type="button"
               onClick={() => { setQuery(""); setFilter("all"); }}

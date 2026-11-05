@@ -20,7 +20,7 @@ npm run dev
 
 Open `http://localhost:3001`. It uses port 3001 so it can run next to the planner (port 3000). In development, the switcher points to the planner (`localhost:3000`), prereqs (`3002`), electives (`3003`) and hub (`3004`) sites.
 
-GitHub Actions typechecks, lints and builds the site on every push (`.github/workflows/ci.yml`).
+GitHub Actions typechecks, lints and builds the site on every push (`.github/workflows/ci.yml`). An accessibility check (axe, in Playwright) runs on the directory and search results in light and dark mode; run it locally with `npx playwright test` (it starts the dev server, or set `PORT` if 3001 is taken).
 
 On the 1st of every month, `.github/workflows/check-links.yml` visits every link in `lib/links.ts` and opens an issue listing any that are broken. Run it any time from the Actions tab.
 
