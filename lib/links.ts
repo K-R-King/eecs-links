@@ -26,6 +26,7 @@ export const CATEGORIES: Category[] = [
       { title: "CalCentral", url: "https://calcentral.berkeley.edu", description: "Enroll in classes, check your waitlist, grades, bills, and holds.", note: "CalNet login" },
       { title: "Class Schedule", url: "https://classes.berkeley.edu", description: "Every class offered this term, with times, rooms, and instructors." },
       { title: "Berkeley Time", url: "https://berkeleytime.com", description: "Grade distributions and enrollment history for every course." },
+      { title: "DeCal program", url: "https://berkeleydecal.com", description: "Student-taught courses (CS and EE 98/198) for 1–4 units: this semester's list and how to enroll." },
       { title: "Academic calendar", url: "https://registrar.berkeley.edu/calendar/", description: "Instruction dates, holidays, finals week, and add/drop deadlines." },
       { title: "Berkeley Academic Guide", url: "https://guide.berkeley.edu", description: "The official catalog: course descriptions and program requirements." },
       { title: "Office of the Registrar", url: "https://registrar.berkeley.edu", description: "Transcripts, enrollment verification, and registration rules." },
