@@ -20,7 +20,7 @@ jobs:
 
       - name: Visit every link
         id: lychee
-        uses: lycheeverse/lychee-action@v2.4.1
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: >-
             --no-progress --max-retries 3 --timeout 30
